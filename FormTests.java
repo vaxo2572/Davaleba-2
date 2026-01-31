@@ -54,7 +54,7 @@ public class FormTests {
 
         WebElement email = driver.findElement(By.id("userEmail"));
         action.scrollToElement(email).perform();
-        email.sendKeys("ctn@gmail.com");
+        email.sendKeys("vaskh@gmail.com");
 
         WebElement birth = driver.findElement(By.id("dateOfBirthInput"));
         action.scrollToElement(birth).perform();
@@ -62,16 +62,16 @@ public class FormTests {
         WebElement month = driver.findElement(By.className("react-datepicker__month-select"));
         WebElement year = driver.findElement(By.className("react-datepicker__year-select"));
         Select select =  new Select(month);
-        select.selectByValue("7");
+        select.selectByValue("6");
         select =  new Select(year);
         select.selectByValue("2005");
-        driver.findElement(By.cssSelector("[aria-label='Choose Friday, August 12th, 2005']")).click();
+        driver.findElement(By.cssSelector("[aria-label='Choose Friday, June 25th, 2005']")).click();
 
         WebElement subjects = driver.findElement(By.id("subjectsInput"));
         action.scrollToElement(subjects).perform();
-        subjects.sendKeys("Maths");
+        subjects.sendKeys("Reading");
         driver.findElement(By.id("react-select-2-option-0")).click();
-        subjects.sendKeys("Chemistry");
+        subjects.sendKeys("Maths");
         driver.findElement(By.id("react-select-2-option-0")).click();
 
         WebElement hobbies = driver.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[1]/label"));
@@ -79,7 +79,7 @@ public class FormTests {
 
         WebElement address= driver.findElement(By.id("currentAddress"));
         action.scrollToElement(address).perform();
-        address.sendKeys("e geixede iqit,iqana vcxovrob me");
+        address.sendKeys("12 Rustaveli Avenue, Tbilisi, Georgia, 0108");
 
 
 
@@ -92,14 +92,14 @@ public class FormTests {
         WebElement submit= driver.findElement(By.id("submit"));
         submit.click();
 
-        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]")).getText(),"ct kp");
-        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[2]/td[2]")).getText(),"ctn@gmail.com");
+        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]")).getText(),"va skh");
+        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[2]/td[2]")).getText(),"vaskh@gmail.com");
         Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[3]/td[2]")).getText(),"Male");
         Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[4]/td[2]")).getText(),"7777777777");
-        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[5]/td[2]")).getText(),"12 August,2005");
-        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[6]/td[2]")).getText(),"Maths, Chemistry");
+        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[5]/td[2]")).getText(),"25 June,2005");
+        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[6]/td[2]")).getText(),"Reading, Maths");
         Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[7]/td[2]")).getText(),"Sports");
-        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[9]/td[2]")).getText(),"e geixede iqit,iqana vcxovrob me");
+        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[9]/td[2]")).getText(),"12 Rustaveli Avenue, Tbilisi, Georgia, 0108");
         Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[10]/td[2]")).getText(),"NCR Delhi");
 
 
@@ -107,4 +107,5 @@ public class FormTests {
     }
 
 }
+
 
